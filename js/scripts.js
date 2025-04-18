@@ -78,10 +78,10 @@ window.onload = function() {
     'Hey there 👋',
     'I\'m Shreyansh',
     'High school graduate taking a gap year 🎓',
-    'Successfully founded and exited a tech startup while in high school',
+    'Successfully founded find.ecs now aquired and rebranded as snow.day while in high school',
     'Currently working at <a href="https://risejhansi.in/" target="_blank">RISE Jhansi</a> as a Founder in Residence 💼',
     'You can find me on <a target="_blank" href="https://github.com/shreyanshdiwakar">GitHub</a> or <a target="_blank" href="https://www.instagram.com/shreyansh.rar/">Instagram</a>',
-    'Or directly contact me at <a href="mailto:shreyanshdiwakar18@gmail.com">shreyanshdiwakar18@gmail.com</a>',
+    'Or directly contact me at <a href="mailto:contact@shreyansh.live">contact@shreyansh.live</a>',
     getCurrentTime(),
     '~ Shreyansh'
   ]

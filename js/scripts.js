@@ -80,7 +80,7 @@ window.onload = function() {
     'High school graduate taking a gap year 🎓',
     'Successfully founded <a href="https://find.ecs" target="_blank">find.ecs</a> now aquired and rebranded as <a href="https://snow.day" target="_blank">snow.day</a> while in high school',
     'Currently working at <a href="https://risejhansi.in/" target="_blank">RISE Jhansi</a> as a Founder in Residence 💼',
-    'You can find me on <a target="_blank" href="https://github.com/shreyanshdiwakar">GitHub</a> or <a target="_blank" href="https://www.instagram.com/shreyansh.rar/">Instagram</a>',
+    'You can find me on <a target="_blank" href="https://www.linkedin.com/in/shreyansh-diwakar-26078a26a/">Linkedin</a> or <a target="_blank" href="https://www.instagram.com/shreyansh.rar/">Instagram</a>',
     'Or directly contact me at <a href="mailto:contact@shreyansh.live">contact@shreyansh.live</a>',
     getCurrentTime(),
     '~ Shreyansh'

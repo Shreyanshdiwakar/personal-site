@@ -1,11 +1,5 @@
 /* Sidequests Page Styles - Light Theme */
-@font-face {
-    font-family: 'Virgil';
-    src: url('https://excalidraw.com/Virgil.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
+@import url('https://fonts.cdnfonts.com/css/wimpykid');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
 :root {
@@ -29,7 +23,7 @@
 body {
     background: var(--bg);
     color: var(--text);
-    font-family: 'Virgil', cursive;
+    font-family: 'WimpyKid', cursive;
     font-size: 1.5rem;
     line-height: 1.8;
     min-height: 100vh;
@@ -66,7 +60,6 @@ body {
 
 .narrative p {
     margin-bottom: 2.5rem;
-    font-style: italic;
     font-size: 1.4rem;
 }
 
@@ -160,6 +153,16 @@ body {
     z-index: 100;
     padding: 0.5rem;
     cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .back-link {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 1rem;
+        padding: 0;
+    }
 }
 
 .back-link:hover {

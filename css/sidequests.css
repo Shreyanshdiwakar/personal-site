@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
 :root {
-    --bg: #f5f0e8;
+    --bg: #ffffff;
     --text: #1a1a1a;
     --text-muted: #666;
     --accent-cyan: #0099cc;
@@ -103,14 +103,11 @@ body {
 
 .images img {
     width: 100%;
-    border-radius: 12px;
     object-fit: cover;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.images img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+.images video {
+    width: 100%;
 }
 
 /* Blog entries */

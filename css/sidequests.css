@@ -103,11 +103,25 @@ body {
 
 .images img {
     width: 100%;
+    border-radius: 12px;
     object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.images img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .images video {
     width: 100%;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.images video:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* Blog entries */
@@ -246,6 +260,30 @@ body {
 
 .article-content a:hover {
     text-decoration: underline;
+}
+
+/* Single column article container */
+.article-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+@media (max-width: 900px) {
+    .article-container {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Inline media (images and videos within article) */
+.inline-media {
+    width: 100%;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.inline-media:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Tags section */

@@ -149,7 +149,9 @@ body {
 
 /* Back link */
 .back-link {
-    display: inline-block;
+    position: fixed;
+    top: 3rem;
+    left: 3rem;
     font-family: 'WimpyKid', cursive;
     font-size: 1.2rem;
     color: var(--text-muted);
@@ -162,12 +164,16 @@ body {
     cursor: pointer;
     background: transparent;
     box-shadow: none;
-    margin-bottom: 2rem;
+    z-index: 100;
 }
 
 @media (max-width: 900px) {
     .back-link {
-        margin-bottom: 1.5rem;
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 2rem 1.5rem 0 1.5rem;
+        width: fit-content;
     }
 }
 

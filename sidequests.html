@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Sidequests | Shreyansh</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="My sidequests and adventures during the gap year." />
+    <meta property="og:site_name" content="shreyansh.dev" />
+    <meta property="og:title" content="Sidequests | Shreyansh" />
+    <meta property="og:description" content="My sidequests and adventures during the gap year." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shreyansh.dev/sidequests" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/sidequests.css" />
+</head>
+
+<body>
+    <a href="index.html" class="back-link">back home</a>
+
+    <div class="container">
+        <div class="content">
+            <p class="greeting">hi</p>
+
+            <div class="narrative">
+                <p>i'm <span class="cyan">shreyansh</span>.</p>
+
+                <p><span class="yellow" id="summers">18</span> summers in, still <span class="orange">figuring things
+                        out</span>.</p>
+
+                <p>i like <span class="green">building things</span> i don't fully understand yet.</p>
+
+                <p>this is where i <span class="pink">keep going</span> anyway.</p>
+            </div>
+
+            <div class="entry">
+                <p class="entry-date">January 2026</p>
+                <p class="entry-title">the gap year begins</p>
+                <p>after selling an edtech startup with <span class="yellow stat">300k</span> users in <span
+                        class="purple stat">4</span> months, i decided to take a step back.</p>
+                <p>now i'm a <span class="pink">Founder in Residence</span> at RISE Jhansi, building the next thing.</p>
+                <a href="#" class="read-more">read more →</a>
+            </div>
+
+            <div class="entry">
+                <p class="entry-date">December 2025</p>
+                <p class="entry-title">the first hack club meetup</p>
+                <p>back then, <span class="purple">13-year-old shreyansh</span> promised himself that he won't let other
+                    kids in his community miss out on tech opportunities like he did.</p>
+                <p>so i hosted my first <span class="cyan">hack club meetup</span> — and <span
+                        class="yellow stat">18</span> people showed up.</p>
+                <a href="articles/hackclub-meetup.html" class="read-more">read more →</a>
+            </div>
+
+            <div class="entry">
+                <p class="coming-soon">more sidequests coming soon...</p>
+                <p style="margin-top: 1rem;">this is where i'll share my adventures, experiments, wins, and spectacular
+                    failures.</p>
+            </div>
+        </div>
+
+        <div class="images">
+            <!-- Add your images here -->
+            <!-- Example: <img src="img/sidequest-1.jpg" alt="Description"> -->
+            <div
+                style="height: 300px; border-radius: 12px; background: linear-gradient(135deg, #e8e4dc 0%, #d4d0c8 100%); display: flex; align-items: center; justify-content: center; color: #888; font-family: 'Inter', sans-serif; font-size: 1rem;">
+                add your photos here
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Calculate age based on birthday (February 18, 2007)
+        function calculateSummers() {
+            const birthday = new Date(2007, 1, 18); // Month is 0-indexed, so 1 = February
+            const today = new Date();
+            let summers = today.getFullYear() - birthday.getFullYear();
+
+            // Check if birthday hasn't occurred this year yet
+            const monthDiff = today.getMonth() - birthday.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthday.getDate())) {
+                summers--;
+            }
+
+            document.getElementById('summers').textContent = summers;
+        }
+
+        // Toggle read more details
+        function toggleDetails(id, link) {
+            const details = document.getElementById(id);
+            if (details.style.display === 'none') {
+                details.style.display = 'block';
+                link.textContent = 'show less ↑';
+            } else {
+                details.style.display = 'none';
+                link.textContent = 'read more →';
+            }
+        }
+
+        // Run on page load
+        calculateSummers();
+    </script>
+</body>
+
+</html>

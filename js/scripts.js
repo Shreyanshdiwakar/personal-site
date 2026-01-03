@@ -4,13 +4,13 @@
  * Copyright (c) 2016 Shreyansh
  */
 
-window.onload = function() {
+window.onload = function () {
 
   var messageSound = null;
   var soundEnabled = false;
 
   // Create sound toggle button
-  var createSoundButton = function() {
+  var createSoundButton = function () {
     var button = document.createElement('button');
     button.innerHTML = '🔇 Enable Sound';
     button.style.position = 'fixed';
@@ -24,31 +24,31 @@ window.onload = function() {
     button.style.cursor = 'pointer';
     button.style.fontSize = '14px';
     button.style.zIndex = '1000';
-    
-    button.addEventListener('click', function() {
+
+    button.addEventListener('click', function () {
       if (!messageSound) {
         messageSound = new Audio('sounds/message.mp3');
         messageSound.volume = 0.5;
       }
-      
-      messageSound.play().then(function() {
+
+      messageSound.play().then(function () {
         soundEnabled = true;
         button.innerHTML = '🔊 Sound On';
         console.log('Sound enabled successfully');
-      }).catch(function(error) {
+      }).catch(function (error) {
         console.error('Error enabling sound:', error);
         button.innerHTML = '❌ Sound Error';
       });
     });
-    
+
     document.body.appendChild(button);
   }
 
   // Create the sound button
   createSoundButton();
-  
+
   // Function to play sound with error handling
-  var playMessageSound = function() {
+  var playMessageSound = function () {
     if (messageSound && soundEnabled) {
       try {
         messageSound.currentTime = 0;
@@ -64,10 +64,10 @@ window.onload = function() {
   var loadingText = '<b>•</b><b>•</b><b>•</b>';
   var messageIndex = 0;
 
-  var getCurrentTime = function() {
+  var getCurrentTime = function () {
     var date = new Date();
-    var hours =  date.getHours();
-    var minutes =  date.getMinutes();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
     var current = hours + (minutes * .01);
     if (current >= 5 && current < 19) return 'Have a nice day';
     if (current >= 19 && current < 22) return 'Have a nice evening';
@@ -77,7 +77,8 @@ window.onload = function() {
   var messages = [
     'Hey there 👋',
     'I\'m Shreyansh',
-    'High school graduate taking a gap year 🎓',
+    'on a gap year 🎓',
+    'read about my <a href="sidequests.html">sidequests</a>',
     'sold an edtech startup with 300k users in 4 months',
     'Currently working at <a href="https://risejhansi.in/" target="_blank">RISE Jhansi</a> as a Founder in Residence 💼',
     'You can find me on <a target="_blank" href="https://www.linkedin.com/in/shreyansh-diwakar-26078a26a/">Linkedin</a> or <a target="_blank" href="https://www.instagram.com/shreyansh.rar/">Instagram</a>',
@@ -86,15 +87,15 @@ window.onload = function() {
     '~ Shreyansh'
   ]
 
-  var getFontSize = function() {
+  var getFontSize = function () {
     return parseInt(getComputedStyle(document.body).getPropertyValue('font-size'));
   }
 
-  var pxToRem = function(px) {
+  var pxToRem = function (px) {
     return px / getFontSize() + 'rem';
   }
 
-  var createBubbleElements = function(message, position) {
+  var createBubbleElements = function (message, position) {
     var bubbleEl = document.createElement('div');
     var messageEl = document.createElement('span');
     var loadingEl = document.createElement('span');
@@ -116,7 +117,7 @@ window.onload = function() {
     }
   }
 
-  var getDimentions = function(elements) {
+  var getDimentions = function (elements) {
     const messageW = elements.message.offsetWidth + 2;
     const messageH = elements.message.offsetHeight;
     const messageS = getComputedStyle(elements.bubble);
@@ -138,7 +139,7 @@ window.onload = function() {
     }
   }
 
-  var sendMessage = function(message, position) {
+  var sendMessage = function (message, position) {
     var loadingDuration = (message.replace(/<(?:.|\n)*?>/gm, '').length * typingSpeed) + 500;
     var elements = createBubbleElements(message, position);
     messagesEl.appendChild(elements.bubble);
@@ -189,23 +190,23 @@ window.onload = function() {
       duration: 300,
       loop: true,
       direction: 'alternate',
-      delay: function(i) {return (i * 100) + 50}
+      delay: function (i) { return (i * 100) + 50 }
     });
-    setTimeout(function() {
+    setTimeout(function () {
       loadingLoop.pause();
       dotsPulse.restart({
         opacity: 0,
         scale: 0,
         loop: false,
         direction: 'forwards',
-        update: function(a) {
+        update: function (a) {
           if (a.progress >= 65 && elements.bubble.classList.contains('is-loading')) {
             elements.bubble.classList.remove('is-loading');
             anime({
               targets: elements.message,
               opacity: [0, 1],
               duration: 300,
-              begin: function() {
+              begin: function () {
                 playMessageSound();
               }
             });
@@ -214,18 +215,18 @@ window.onload = function() {
       });
       bubbleSize.restart({
         scale: 1,
-        width: [dimensions.loading.w, dimensions.bubble.w ],
-        height: [dimensions.loading.h, dimensions.bubble.h ],
+        width: [dimensions.loading.w, dimensions.bubble.w],
+        height: [dimensions.loading.h, dimensions.bubble.h],
         marginTop: 0,
         marginLeft: 0,
-        begin: function() {
+        begin: function () {
           if (messageIndex < messages.length) elements.bubble.classList.remove('cornered');
         },
       })
     }, loadingDuration - 50);
   }
 
-  var sendMessages = function() {
+  var sendMessages = function () {
     var message = messages[messageIndex];
     if (!message) return;
     sendMessage(message);

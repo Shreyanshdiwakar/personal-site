@@ -23,7 +23,7 @@
 body {
     background: var(--bg);
     color: var(--text);
-    font-family: 'WimpyKid', cursive;
+    font-family: 'WimpyKid', 'Inter', cursive, sans-serif;
     font-size: 1.5rem;
     line-height: 1.8;
     min-height: 100vh;
